@@ -14,11 +14,11 @@ IES Miguel Herrero.
   [Apuntes de la Unidad 1.](Tema1/Apuntes.md)
   
 
-<!--🎥 **2. UNIDAD 2. DISEÑO LÓGICO DE LA BASE DE DATOS.**
+🎥 **2. UNIDAD 2. DISEÑO LÓGICO DE LA BASE DE DATOS.**
   
   [Apuntes de la Unidad 2.](Tema2/Apuntes.md)
 
-📱 **3. UNIDAD 3. DISEÑO FÍSICO DE UNA BASE DE DATOS.**
+<!--📱 **3. UNIDAD 3. DISEÑO FÍSICO DE UNA BASE DE DATOS.**
   
   [Apuntes de la Unidad 3.](Tema3/Apuntes.md)
 
