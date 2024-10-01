@@ -264,7 +264,7 @@ Representación de cardinalidad y tipo de correspondencia
 
 ## HOJAS DE EJERCICIOS
 
-💻 Hoja de ejercicios 1. Los ejercicios del 1 al 5.
+💻 Hoja de ejercicios 1.
 
 Vamos a ver ahora que tipos de correspondencia nos podemos encontrar en una relación ternaria y como se puede obtener.
 
@@ -403,7 +403,7 @@ Las cardinalidades de la especialización para los cuatro casos que hemos visto 
 
 ## HOJAS DE EJERCICIOS
 
-💻 Hoja de ejercicios 1. Ejercicios del 6 al 8.
+💻 Hoja de ejercicios 3.
 
 ## 4.- CONSTRUCCIÓN DE UN DIAGRAMA E/R
 
@@ -424,8 +424,6 @@ Los pasos a seguir serán:
 
 ## HOJAS DE EJERCICIOS
 
-💻 Hoja de ejercicios 3.
-
 💻 Hoja de ejercicios 4.
 
 💻 Hoja de ejercicios 5.
@@ -433,8 +431,6 @@ Los pasos a seguir serán:
 💻 Hoja de ejercicios 6.
 
 💻 Hoja de ejercicios 7.
-
-💻 Hoja de ejercicios 7bis.
 
 
 ## 5.- MODELO RELACIONAL
@@ -676,8 +672,6 @@ Os dejo un documento resumen de como hacer el paso del modelo E-R al modelo Rela
 💻 Hoja de ejercicios 13.
 
 💻 Hoja de ejercicios 14.
-
-💻 Hoja de ejercicios 14bis.
 
 ## 6.- NORMALIZACIÓN
 
