@@ -136,29 +136,29 @@ El dominio de un atributo es todo el conjunto de valores que se pueden asignar a
     - Un atributo es simple si su contenido no se considera dividido en partes, por ejemplo NOMBRE. 
     - Es compuesto si admite dividirse en partes. Por ejemplo, FECHA podría ser compuesto si se considera que de FECHA se puede usar aisladamente DIA, MES y AÑO.
 
-![Atributos](img/atributo2.png)
+      ![Atributos](img/atributo2.png)
 
 2. *Atributos monovaluados y atributos multivaluados*: 
     - Un atributo es monovaluado si admite para cada elemento de la entidad un solo valor, por ejemplo nombre de una persona sería monovaluado. 
     - Si un atributo admite una lista de valores para cada elemento, sería multivaluado, por ejemplo si un atributo de la entidad CLIENTE fuese teléfono_cliente, éste podría ser  atributo multivaluado. 
 
-![Atributos](img/atributo3.png)
+      ![Atributos](img/atributo3.png)
 
 3. *Atributos obligatorios y atributos opcionales*: 
     - Un atributo es obligatorio si para todo elemento debe contener algún valor y es opcional si puede haber elementos que no tengan asignado ningún valor para ese atributo. Por ejemplo, el atributo Aficiones podría ser opcional para una entidad CLIENTE.
     - Un atributo opcional se representa:
 
-![Atributos](img/atributo4.png)
+      ![Atributos](img/atributo4.png)
 
 4. *Atributos derivados y no derivados*: 
     - Un atributo es derivado si se puede obtener a partir de los datos contenidos en otros atributos. Un atributo derivado podría ser IMPORTE DE VENTA si los valores para ese atributo se obtuviesen a través de los atributos UNIDADES VENDIDAS y PRECIO UNIDAD. No es recomendable usar atributos derivados.
     - Un atributo es no derivado si su valor no depende de ningún otro atributo. 
 
-5. *Clave* : Una clave sirve para identificar de forma única a cada elemento de una entidad. Una clave puede estar formada por un solo atributo o por varios. En una clave no se pueden repetir valores, es decir, no puede haber dos elementos de la misma entidad con la misma clave. En una entidad puede haber dos tipos de clave:
+5. *Atributo Clave* : Una clave sirve para identificar de forma única a cada elemento de una entidad. Una clave puede estar formada por un solo atributo o por varios. En una clave no se pueden repetir valores, es decir, no puede haber dos elementos de la misma entidad con la misma clave. En una entidad puede haber dos tipos de clave:
     - Clave primaria o principal: Dentro de los conjuntos de atributos que pueden permitir identificar a los elementos de una entidad, debería ser la que se considera más adecuada en base a una serie de requisitos: simplicidad, longitud, representatividad, estabilidad.
     - Clave secundaria o alternativa. Puede haber varias en una entidad pero no se debe abusar de estas claves. Serán todas aquellas que decidamos, aparte de la primaria.
 
-Representación de los atributos: 
+Representación de los distintos tipos de atributos: 
 
 ![Atributos](img/atributo5.png)
 
