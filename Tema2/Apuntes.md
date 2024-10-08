@@ -358,6 +358,10 @@ Hay dos tipos de dependencias en relaciones de debilidad:
 
 💻 Hoja de ejercicios 2.
 
+💻 Hoja de ejercicios 3.
+
+💻 Hoja de ejercicios 4.
+
 ## 3.- EL MODELO E/R AMPLIADO
 
 El **Modelo E/R ampliado** recoge todos los conceptos y especificaciones del modelo E/R y añade otros para mejorar el diseño de las bases de datos. Se definen los siguientes conceptos dentro de este modelo:
@@ -403,7 +407,9 @@ Las cardinalidades de la especialización para los cuatro casos que hemos visto 
 
 ## HOJAS DE EJERCICIOS
 
-💻 Hoja de ejercicios 3.
+💻 Hoja de ejercicios 5.
+
+💻 Hoja de ejercicios 6.
 
 ## 4.- CONSTRUCCIÓN DE UN DIAGRAMA E/R
 
@@ -423,12 +429,6 @@ Los pasos a seguir serán:
 6. Volver a leer el problema para ver si nos hemos dejado algo. Revisar que toda la información está representada en el esquema y refinarlo si es necesario.
 
 ## HOJAS DE EJERCICIOS
-
-💻 Hoja de ejercicios 4.
-
-💻 Hoja de ejercicios 5.
-
-💻 Hoja de ejercicios 6.
 
 💻 Hoja de ejercicios 7.
 
@@ -834,3 +834,5 @@ Nosotros en clase solo vamos a trabajar hasta la 3FN. Si quieres saber más sobr
 💻 Hoja de ejercicios 17.
 
 💻 Hoja de ejercicios 18.
+
+💻 Hoja de ejercicios 19. REPASO DE TODO EL TEMA.
