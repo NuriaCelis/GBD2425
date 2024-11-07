@@ -386,7 +386,7 @@ Las instrucciones DDL para administrar tablas permiten:
 
 ## 6.1.- Sintaxis de la instrucción CREATE TABLE
 
-La instrucción SQL para crear una tabla es CREATE TABLE. La sintaxis completa de esta instrucción es bastante compleja. La puedes ver dentro de la documentación oficial de MySQL.
+La instrucción SQL para crear una tabla es **CREATE TABLE**. La sintaxis completa de esta instrucción es bastante compleja. La puedes ver dentro de la documentación oficial de MySQL.
 
 https://dev.mysql.com/doc/refman/8.0/en/create-table.html
 
@@ -397,18 +397,18 @@ CREATE  [TEMPORARY] TABLE  [IF NOT EXISTS] nombre_tabla
 (
 	nombre_columna1   tipo   [restricciones_tipo_1],
 	nombre_columna2	   tipo   [restricciones_tipo_1],
-	………………………….
-	[restricción_tipo_2	],
-	[restricción_tipo_2	],
-	……………………………………….
+    ...
+	[restriccion_tipo_2	],
+	[restriccion_tipo_2	],
+	...
 )  [opciones_tabla];
 ```
 
 Interpretación de la sintaxis:
 
-1. La cláusula TEMPORARY hace que la tabla creada es temporal para la sesión cliente en ejecución. Al salir de la sesión la tabla se elimina automáticamente.
+1. La cláusula **TEMPORARY** hace que la tabla creada es temporal para la sesión cliente en ejecución. Al salir de la sesión la tabla se elimina automáticamente.
 
-2. La cláusula IF NOT EXISTS hace que el servidor no devuelva un error cuando se intenta crear una tabla y ya existe.
+2. La cláusula **IF NOT EXISTS** hace que el servidor no devuelva un error cuando se intenta crear una tabla y ya existe.
 
 3. Se abre y cierra un paréntesis. Entre el paréntesis se escriben separadas por comas todas las definiciones de columnas. Después de las definiciones de las columnas se escriben separadas por comas, si las hay,  las definiciones de restricciones en la tabla.
 4. Al finalizar la definición de columnas se escriben todas las opciones o propiedades de la tabla. Si no se escribe ninguna se establecen las propiedades por defecto.
