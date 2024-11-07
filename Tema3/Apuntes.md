@@ -36,7 +36,6 @@
   - [HOJAS DE EJERCICIOS](#hojas-de-ejercicios-1)
 - [7.- VISTAS](#7--vistas)
   - [HOJAS DE EJERCICIOS](#hojas-de-ejercicios-2)
-    - [SOLUCIONES A LOS EJERCICIOS DEL TEMA](#soluciones-a-los-ejercicios-del-tema)
 
 # 1.- CARACTERÍSTICAS DEL DISEÑO FÍSICO
 
@@ -767,7 +766,7 @@ SELECT * FROM city WHERE name='Barcelona';
 💻 Hoja de ejercicios 8.
 
 
-
+<!--
 <a name="Soluciones"></a>
 
 ### SOLUCIONES A LOS EJERCICIOS DEL TEMA
@@ -836,3 +835,5 @@ CREATE TABLE ciclos (
    CONSTRAINT fk_ciclos_familias FOREIGN KEY (familia) REFERENCES familiasprof (codfamilia) ON DELETE NO ACTION ON UPDATE CASCADE
  ) ;
 ```
+
+-->
