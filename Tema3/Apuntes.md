@@ -80,7 +80,7 @@ HeidiSQL
 
 # 3.- EL LENGUAJE DE DEFINICIÓN DE DATOS (DDL)
 
-Desde este momento comenzamos a usar el lenguaje SQL (Structured Query Language).Se trata de un lenguaje estandarizado para interactuar mediante consultas sobre sistemas de bases de datos relacionales. Se entiende por consulta cualquier petición que se hace al SGBD.
+Desde este momento comenzamos a usar el lenguaje SQL (Structured Query Language). Se trata de un lenguaje estandarizado para interactuar mediante consultas sobre sistemas de bases de datos relacionales. Se entiende por consulta cualquier petición que se hace al SGBD.
 
 Los SGBD relacionales incluyen siempre alguna herramienta para ejecutar instrucciones SQL.Desde el primer estándar ANSI-SQL de 1986, se han ido desarrollando varios estándares o versiones del SQL. El último es SQL-2016.
 
@@ -190,8 +190,7 @@ La sintáxis de la instrucción para **modificar una base de datos** es la sigui
 ```
 **Realiza el siguiente ejercicio:**
 
-6. Probamos las siguientes instrucciones en MySql Command Line Client:
-    - Entramos con la contraseña de root
+6. Probamos las siguientes instrucciones en MySql Workbench:
     - Mostramos las bases de datos existentes:
 ```sql
     SHOW databases;
@@ -234,7 +233,7 @@ Todos los enteros se pueden definir en la forma TIPO(N) donde N indicará el nú
 
 Todos los reales se pueden definir en la forma TIPO(N,D) donde N indicará el número total de cifras con que se presenta o edita el número (de 0 a 24) y D es el número de decimales.
 
-Todos los tipos numéricos admiten los modificadores UNSIGNED y ZEROFILL. UNSIGNED especifica que el entero es sin signo y ZEROFILL que un número que ocupa N cifras se muestra en pantalla rellenando con ceros las cifras no significativas del número. 
+Todos los tipos numéricos admiten los modificadores **UNSIGNED** y **ZEROFILL**. **UNSIGNED** especifica que el entero es sin signo y **ZEROFILL** que un número que ocupa N cifras se muestra en pantalla rellenando con ceros las cifras no significativas del número. 
 
 Ejemplos de definición de columnas:
 
