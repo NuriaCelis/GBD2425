@@ -766,9 +766,11 @@ Antes de dar los conceptos de formas normales veamos unas definiciones previas:
 
 ### 6.1.- Primera forma normal (1FN)
 
-Una Relación está en 1FN si y sólo si cada atributo es atómico.
+Una Relación está en 1FN si y sólo si cada atributo es atómico. Eso significa que, al elegir una clave primaria de entre todos los campos de la tabla, te aseguras que en cada celda solo tienes un dato, y no varios. 
 
-Ejemplo: Supongamos que tenemos la siguiente tabla con datos de ordenes de pedidos de varios clientes de diversos artículos.
+Vamos a ver como se va normalizando una tabla desde la 1FN hasta la 3FN a través de un ejemplo.
+
+**Ejemplo:** Supongamos que tenemos la siguiente tabla con datos de ordenes de pedidos de varios clientes de diversos artículos.
 
 ![Formas](img/formas2.png)
 
