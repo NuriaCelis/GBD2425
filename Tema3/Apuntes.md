@@ -2,7 +2,6 @@
 # UNIDAD 3. DISEÑO FÍSICO DE LA BASE DE DATOS.
 
 ## INDICE
-
 - [UNIDAD 3. DISEÑO FÍSICO DE LA BASE DE DATOS.](#unidad-3-diseño-físico-de-la-base-de-datos)
   - [INDICE](#indice)
 - [1.- CARACTERÍSTICAS DEL DISEÑO FÍSICO](#1--características-del-diseño-físico)
@@ -23,15 +22,15 @@
     - [Operadores](#operadores)
 - [6.- ADMINISTRACIÓN DE TABLAS](#6--administración-de-tablas)
   - [6.1.- Sintaxis de la instrucción CREATE TABLE](#61--sintaxis-de-la-instrucción-create-table)
-    - [6.6.1.- Tipos de índices](#661--tipos-de-índices)
+    - [6.1.1.- Tipos de índices](#611--tipos-de-índices)
   - [6.2.- Opciones de tabla](#62--opciones-de-tabla)
   - [HOJAS DE EJERCICIOS](#hojas-de-ejercicios)
   - [6.3.- Modificación de tablas](#63--modificación-de-tablas)
     - [6.3.1.- Alter table](#631--alter-table)
       - [Ejemplos de uso de Alter Table.](#ejemplos-de-uso-de-alter-table)
-    - [6.3.2.- Create Index](#632--create-index)
-    - [6.3.3.- Drop Index](#633--drop-index)
-  - [6.3.4.- Rename table](#634--rename-table)
+    - [6.3.1.- Create Index](#631--create-index)
+    - [6.3.2.- Drop Index](#632--drop-index)
+  - [6.3.3.- Rename table](#633--rename-table)
   - [6.4.- Eliminación de tablas](#64--eliminación-de-tablas)
   - [HOJAS DE EJERCICIOS](#hojas-de-ejercicios-1)
 - [7.- VISTAS](#7--vistas)
@@ -476,7 +475,7 @@ En este ejemplo estamos creando una tabla con 7 campos, tiene como clave primari
 
 [Solución](#Soluciones)
 
-### 6.6.1.- Tipos de índices
+### 6.1.1.- Tipos de índices
 
 Los índices son referencias o punteros que apuntan a las filas que contienen un valor en una o varias columnas. Su función es mejorar el rendimiento en tablas muy grandes haciendo que las consultas se hagan más rápido.
 
@@ -626,7 +625,7 @@ ALTER TABLE contratos DROP FOREIGN KEY  fk_matri;
 ALTER TABLE alumnos DROP INDEX IND_DNI_ALU;
 ```
 
-### 6.3.2.- Create Index
+### 6.3.1.- Create Index
 
 CREATE INDEX permite crear  o añadir índices. Hemos visto que mediante una especificación de ALTER TABLE también se podían añadir índices.
 
@@ -650,7 +649,7 @@ CREATE UNIQUE INDEX  indNomApe ON alumnos (apellidos,nombre);
 CREATE INDEX  indApe10e ON profesores (apellidos(10));
 ```
 
-### 6.3.3.- Drop Index
+### 6.3.2.- Drop Index
 
 DROP INDEX permite eliminar un índice normal, UNIQUE o FULLTEXT. Su sintaxis es la siguiente:
 
@@ -664,7 +663,7 @@ Para mostrar las características de los índices de una tabla se usa la sentenc
 SHOW INDEX FROM nombre_tabla;
 ```
 
-## 6.3.4.- Rename table
+## 6.3.3.- Rename table
 
 RENAME TABLE permite renombrar una tabla. Su sintaxis es la siguiente:
 
