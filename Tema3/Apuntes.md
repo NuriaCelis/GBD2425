@@ -72,10 +72,9 @@ HeidiSQL
 
 2. Crea gráficamente en la base de datos EmpTransportes, la tabla camiones y __copia la instrucción__ SQL de creación de la tabla.
 
-    ![grafico](img/imagen4.png)
-
-
 3. Abre una ventana para editar y ejecutar instrucciones SQL. Edita la instrucción copiada para crear la tabla camioneros.
+
+  ![grafico](img/imagen4.png)
 
 # 3.- EL LENGUAJE DE DEFINICIÓN DE DATOS (DDL)
 
