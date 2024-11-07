@@ -768,11 +768,13 @@ Antes de dar los conceptos de formas normales veamos unas definiciones previas:
 
 Una Relación está en 1FN si y sólo si cada atributo es atómico.
 
-Ejemplo: Supongamos que tenemos la siguiente tabla con datos de alumnado de un centro de enseñanza secundaria.
+Ejemplo: Supongamos que tenemos la siguiente tabla con datos de ordenes de pedidos de varios clientes de diversos artículos.
 
 ![Formas](img/formas2.png)
 
-Como se puede observar, esta tabla no está en 1FN puesto que el campo Teléfonos contiene varios datos dentro de una misma celda y por tanto no es un campo cuyos valores sean atómicos. La solución sería la siguiente:
+Tomamos como clave principal Id_orden. Como se puede observar, esta tabla no está en 1FN puesto que hay varios campos que se repiten para el mismo Id_orden, que son: Num_art, nom_art, cant y Precio. 
+
+La solución para pasar a 1FN sería eliminar los campos que se repiten en una nueva tabla cuya clave primaria sea la clave primaria de la tabla base y el grupo repetido. Quedaría de la siguiente manera:
 
 ![Formas](img/formas3.png)
 
@@ -780,44 +782,56 @@ Como se puede observar, esta tabla no está en 1FN puesto que el campo Teléfono
 
 Una Relación esta en 2FN si y sólo si está en 1FN y todos los atributos que no forman parte de la Clave Principal tienen dependencia funcional completa de ella.
 
-Ejemplo: Seguimos con el ejemplo anterior. Trabajaremos con la siguiente tabla:
+Ejemplo: Seguimos con el ejemplo anterior. Partimos de la 1FN y tenemos que eliminar cualquier campo que no depende de toda la clave primaria. Los pasos a seguir son:
+
+- Saber que columnas dependen solo de una parte de la clave primaria.
+- Eliminar esas columnas de la tabla
+- Crear una nueva tabla con esas columnas repetidas y como clave primaria el campo del que dependen.
+
+NOTA: Si la tabla esta en 1FN y su clave primaria solo tiene un campo, ya está en 2FN.
+
+Conclusión: 
+
+La tabla Ordenes ya está en 2FN puesto que esta en 1FN y su clave principal está formada por un solo campo.
+
+La tabla Articulos_Ordenes no está en 2FN puesto que el precio y el nom_art dependen solo de Num_art, pero no de Id_Orden. Lo que se hace es eliminar esas columnas de la tabla Articulos_ordenes y crear una tabla Articulos con dichas columnas y la clave primaria de la que dependen. 
+
+El resultado es el siguiente: 
 
 ![Formas](img/formas4.png)
 
-Vamos a examinar las dependencias funcionales. El gráfico que las representa es el siguiente:
-
 ![Formas](img/formas5.png)
 
-- La clave principal de la tabla alumnos es el DNI + Curso.
-- Del DNI del alumno dependen su nombre, localidad y provincia. 
-- Del Curso depende el tutor.
-- Del DNI + Curso  depende la fecha de matricula.
+De momento, en 2FN nos quedan 3 tablas:
 
-Si escogemos DNI como clave primaria, tenemos un atributo (Tutor) que no depende funcionalmente de él. Si escogemos Curso como clave primaria, tenemos otros atributos que no dependen de él. 
-
-Por tanto esta tabla no está en 2FN porque tenemos atributos de la tabla que solo dependen de uno de los campos de la tabla. La solución sería la siguiente:
-
-![Formas](img/formas6.png)
+- Tabla ordenes, con clave principal id_orden.
+- Tabla Articulos_ordenes, con clave principal id_orden, num_art.
+- Tabla Articulos, con clave principal num_art.
 
 ### 6.3.- Tercera forma normal (3FN)
 
 Una Relación esta en 3FN si y sólo si está en 2FN y no existen dependencias transitivas. Todas las dependencias funcionales deben ser respecto a la clave principal.
 
-Ejemplo: Seguimos con el ejemplo anterior. Trabajaremos con la siguiente tabla:
+Es decir, tenemos que buscar atributos que dependen de otros atributos que no son clave principal.
+
+Ejemplo: Seguimos con el ejemplo anterior. Se parten de las tres tablas que tenemos en 2FN. Los pasos a seguir son:
+
+- Determinar las columnas que son dependientes de otras columnas que nos son clave.
+- Eliminar esas columnas de la tabla base.
+- Crear una segunda tabla con esas columnas y con la columna no clave de la cual son dependientes.
+
+En nuestro ejemplo tanto la tabla Articulos como la tabla Articulos_ordenes ya están en 3FN, porque todos sus campos dependen de la clave principal. Sin embargo, la tabla ordenes no lo está, puesto que el nom_cliente y estado son dependientes del Id_cliente, y esa columna no es clave primaria.
+
+![Formas](img/formas6.png)
+
+Para normalizar esta tabla moveremos las columnas no clave y la columna clave a otra tabla llamada Clientes. Las tablas clientes y ordenes se muestran a continuación:
 
 ![Formas](img/formas7.png)
 
-Las dependencias funcionales existentes son las siguientes. Como podemos observar existe una dependencia funcional transitiva: DNI → Localidad → Provincia
+De modo que el resultado final es:
 
 ![Formas](img/formas8.png)
 
-Para que la tabla esté en 3FN, no pueden existir dependencias funcionales transitivas. Para solucionar el problema deberemos crear una nueva tabla. El resultado es:
-
-![Formas](img/formas9.png)
-
-**RESULTADO FINAL**
-
-![Formas](img/formas10.png)
 
 ![Formas](img/formas11.png)
 
