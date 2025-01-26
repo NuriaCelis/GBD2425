@@ -19,7 +19,6 @@
     - [2.3.- Las reuniones externas. LEFT JOIN. RIGHT JOIN.](#23--las-reuniones-externas-left-join-right-join)
       - [La reunión externa por la izquierda. LEFT JOIN.](#la-reunión-externa-por-la-izquierda-left-join)
       - [La reunión externa por la derecha. RIGHT JOIN.](#la-reunión-externa-por-la-derecha-right-join)
-      - [Otro tipo de reuniones. NATURAL JOIN. STRAIGHT.](#otro-tipo-de-reuniones-natural-join-straight)
   - [HOJAS DE EJERCICIOS](#hojas-de-ejercicios-4)
     - [2.4.- Las consultas de resumen y el agrupamiento de registros.](#24--las-consultas-de-resumen-y-el-agrupamiento-de-registros)
   - [HOJAS DE EJERCICIOS](#hojas-de-ejercicios-5)
@@ -883,29 +882,6 @@ WHERE numcontrato IS NULL;
 
 ![Right Join](img/Imagen59.png)
 
-#### Otro tipo de reuniones. NATURAL JOIN. STRAIGHT.
-
-NATURAL JOIN
-
-Permite combinar filas de dos tablas relacionadas por igualdad entre una clave ajena y una clave primaria relacionada.
-
-**Ejemplo:** Obtener los datos de los clientes que han realizado los cinco primeros contratos.
-
-```SQL
-SELECT clientes.* FROM contratos 
-NATURAL JOIN clientes LIMIT 5;
-```
-
-![Natural Join](img/Imagen60.png)
-
-STRAIGHT JOIN
-Puede usarse con las cláusulas ON y USING para realizar lo mismo que INNER JOIN. Sin esas cláusulas realiza lo mismo que NATURAL JOIN.
-
-Enlaces de ampliación de los tipos de reuniones.
-
-[Enlace a la wikipedia](https://es.wikipedia.org/wiki/Sentencia_JOIN_en_SQL)
-
-[Enlace a programación y más](https://programacionymas.com/blog/como-funciona-inner-left-right-full-join)
 
 ## HOJAS DE EJERCICIOS
 
