@@ -558,6 +558,8 @@ Es muy frecuente y necesario tener que realizar consultas sobre combinaciones de
 
 Por ejemplo, en la base de datos de alquileres, para obtener el nombre y apellidos de los clientes que han alquilado coches en enero, necesitamos usar o combinar dos tablas en la consulta: clientes y contratos.
 
+![Consulta](img/Imagen36b.png)
+
 En MySQL podemos usar las siguientes operaciones de combinación de tablas:
 
 - Producto cartesiano o CROSS JOIN
@@ -567,17 +569,17 @@ En MySQL podemos usar las siguientes operaciones de combinación de tablas:
 
 ### 2.1.- La reunión interna. INNER JOIN
 
-Permite emparejar filas de dos tablas a través de una relación entre una columna de una tabla y otra columna de otra tabla. 
+La reunión interna o la operacion **INNER JOIN** permite emparejar filas de dos tablas a través de una relación entre una columna de una tabla y otra columna de otra tabla. 
 
 Lo normal es que sean la clave principal de una tabla y la correspondiente clave ajena relacionada en la otra tabla, aunque pueden ser columnas que no tienen relación de clave ajena establecida. 
 
 En una consulta de este tipo, para cada fila de una de las tablas se busca en la otra tabla la fila o filas que cumplen la condición de relación que se quiera entre las dos columnas (normalmente se busca igualdad entre clave principal y clave ajena). 
 
-![inner Join](img/Imagen38.png)
+En nuestra base de datos alquileres, nos fijamos que en la tabla contrato tiene un campo llamado dnicliente. Al hacer un inner join entre la tabla contratos y clientes, sacará un listado de todos los clientes con cada uno de sus contratos de forma aparejada, buscando para cada contrato el dni del cliente que coincide con el valor que tenemos en dnicliente.
 
-Permite emparejar filas de dos tablas a través de una relación entre una columna de una tabla y otra columna de otra tabla. 
+![inner Join](img/Imagen38b.png)
 
-Lo normal es que sean la clave principal de una tabla y la correspondiente clave ajena relacionada en la otra tabla, aunque pueden ser columnas que no tienen relación de clave ajena establecida. 
+Es decir, esta instrucción permite emparejar filas de dos tablas a través de una relación entre una columna de una tabla y otra columna de otra tabla. Lo normal es que la unión de ambas tablas se hagan a través de la clave principal de una tabla y la correspondiente clave ajena relacionada en la otra tabla, aunque pueden ser columnas que no tienen relación de clave ajena establecida. 
 
 En una consulta de este tipo, para cada fila de una de las tablas se busca en la otra tabla la fila o filas que cumplen la condición de relación que se quiera entre las dos columnas (normalmente se busca igualdad entre clave principal y clave ajena). 
 
@@ -686,20 +688,6 @@ WHERE marca='seat';
 ```
 
 ![ejemplo](img/Imagen43.png)
-
-Vamos a hacer pruebas en la **BD NBA**:
-
-**Ejemplo:** En una base de datos nba tenemos una tabla equipos. En la tabla equipos, entre otros datos, se tiene el nombre del equipo y la división en la que participa. Obtener todos los enfrentamientos o partidos posibles entre equipos de la división central sin usar la tabla partidos, buscando los distintos cruces.
-
-```sql
-SELECT a.nombre AS local,b.nombre AS visitante 
-FROM equipos AS a INNER JOIN equipos AS b ON a.nombre <> b.nombre 
-WHERE a.division='central' AND b.division='central';
-```
-
-![ejemplo](img/Imagen42.png)
-
-Explicación: Tenemos una INNER JOIN entre dos tablas que son la misma. A la primera la renombramos como tabla a y la segunda como tabla b, pero las dos son equipos. 
 
 ## HOJAS DE EJERCICIOS
 
