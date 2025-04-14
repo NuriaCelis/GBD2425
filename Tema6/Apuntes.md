@@ -170,7 +170,7 @@ CALL saludar_persona('María');
 3. Crea un procedimiento llamado `info_usuario` que reciba un nombre y un apellido y muestre un mensaje de bienvenida personalizado.
 
 > 💡 Consejo: prueba cada procedimiento y modifica valores para ver cómo se comporta.
-```
+
 
 
 ## ✅ 4. Funciones
@@ -249,7 +249,6 @@ SELECT es_mayor_edad(20); -- Resultado: 'Mayor de edad'
 3. Crea una función llamada `iva_incluido` que reciba un precio y devuelva el precio con un 21% de IVA.
 
 > 💡 Prueba las funciones usando `SELECT` directamente.
-```
 
 
 
@@ -285,15 +284,8 @@ SELECT es_mayor_edad(20); -- Resultado: 'Mayor de edad'
 - Usa nombres claros y descriptivos (`calcular_total`, `mostrar_fecha`).
 - Comenta tu código con `-- comentario`.
 - Prueba tus funciones y procedimientos paso a paso.
-```
 
----
 
-¡Perfecto! Aquí tienes una **sección de autoevaluación tipo test** basada en las primeras cuatro secciones del tema: variables, procedimientos, funciones y conceptos generales. Las preguntas están en formato Markdown e incluyen una sección de soluciones al final (comentada para que no se vean si el documento se imprime o se muestra sin desplegar respuestas).
-
----
-
-```markdown
 ## ✅ Autoevaluación: Programación en Bases de Datos – Nivel básico
 
 Responde a las siguientes preguntas tipo test. Solo una opción es correcta en cada caso.
@@ -389,7 +381,4 @@ d) `RETURN`
   8. a
 
 </details>
-```
-
----
 
