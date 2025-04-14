@@ -84,13 +84,7 @@ CALL ejemplo_variables();
 ```
 ```
 
----
 
-¡Perfecto! Vamos con la **sección 3: Procedimientos almacenados**, en formato Markdown, incluyendo explicaciones, ejemplos y ejercicios sencillos. Al final, te iré juntando todas las secciones en un único archivo Markdown completo.
-
----
-
-```markdown
 ## ✅ 3. Procedimientos almacenados (Stored Procedures)
 
 Un **procedimiento almacenado** es un bloque de código SQL que se guarda en la base de datos y se puede ejecutar cuantas veces queramos. Sirve para automatizar tareas, encapsular lógica y reutilizar código.
@@ -178,13 +172,7 @@ CALL saludar_persona('María');
 > 💡 Consejo: prueba cada procedimiento y modifica valores para ver cómo se comporta.
 ```
 
----
 
-¡Perfecto! Aquí va la **Sección 4: Funciones** en formato Markdown, con explicaciones, ejemplos y ejercicios, y después te incluyo una sección final de **Resumen visual / Mapa de conceptos**.
-
----
-
-```markdown
 ## ✅ 4. Funciones
 
 Una **función** es un bloque de código almacenado en la base de datos que **devuelve un único valor**. A diferencia de los procedimientos, las funciones **pueden utilizarse dentro de una consulta**, como si fueran una función de MySQL (`NOW()`, `CONCAT()`, etc.).
@@ -263,11 +251,11 @@ SELECT es_mayor_edad(20); -- Resultado: 'Mayor de edad'
 > 💡 Prueba las funciones usando `SELECT` directamente.
 ```
 
----
+
 
 ### 🧭 Sección final: Resumen visual / Mapa de conceptos
 
-```markdown
+
 ## 📌 Resumen visual: Programación en bases de datos
 
 ### 🧠 Conceptos clave
