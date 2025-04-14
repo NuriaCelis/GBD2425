@@ -382,3 +382,227 @@ d) `RETURN`
 
 </details>
 
+
+## ✅ Estructuras de programación en MySQL
+
+Al igual que en otros lenguajes de programación, MySQL permite controlar el flujo del código mediante **estructuras de control**: condiciones (`IF`, `CASE`) y bucles (`WHILE`, `LOOP`, `REPEAT`).
+
+Estas estructuras se usan normalmente dentro de procedimientos y funciones.
+
+---
+
+### 🔹 IF – Condicional simple
+
+Se utiliza para ejecutar código solo si se cumple una condición.
+
+#### 🧱 Sintaxis
+
+```sql
+IF condición THEN
+   -- código
+END IF;
+```
+
+#### 🧪 Ejemplo
+
+```sql
+DELIMITER //
+
+CREATE PROCEDURE evaluar_nota(nota INT)
+BEGIN
+   IF nota >= 5 THEN
+      SELECT 'Aprobado' AS resultado;
+   END IF;
+END //
+
+DELIMITER ;
+
+CALL evaluar_nota(6);
+```
+
+---
+
+### 🧠 Ejercicios propuestos – IF
+
+1. Crea un procedimiento `evaluar_edad` que reciba una edad y muestre "Mayor de edad" solo si es mayor o igual a 18.
+2. Crea un procedimiento `es_par` que reciba un número y muestre "Es par" si lo es.
+
+---
+
+### 🔹 CASE – Condicional múltiple
+
+Permite evaluar varias condiciones posibles.
+
+#### 🧱 Sintaxis
+
+```sql
+CASE
+   WHEN condición1 THEN acción1
+   WHEN condición2 THEN acción2
+   ELSE acción_por_defecto
+END CASE;
+```
+
+#### 🧪 Ejemplo
+
+```sql
+DELIMITER //
+
+CREATE PROCEDURE calificar_nota(nota INT)
+BEGIN
+   CASE
+      WHEN nota >= 9 THEN SELECT 'Sobresaliente';
+      WHEN nota >= 7 THEN SELECT 'Notable';
+      WHEN nota >= 5 THEN SELECT 'Aprobado';
+      ELSE SELECT 'Suspenso';
+   END CASE;
+END //
+
+DELIMITER ;
+
+CALL calificar_nota(6);
+```
+
+---
+
+### 🧠 Ejercicios propuestos – CASE
+
+1. Crea un procedimiento `evaluar_dia` que reciba un número (1-7) y devuelva el nombre del día de la semana.
+2. Crea un procedimiento `clasificar_temperatura` que reciba una temperatura y devuelva "Frío", "Templado" o "Calor".
+
+---
+
+### 🔁 WHILE – Bucle mientras se cumpla una condición
+
+Repite un bloque de código mientras la condición sea verdadera.
+
+#### 🧱 Sintaxis
+
+```sql
+WHILE condición DO
+   -- código
+END WHILE;
+```
+
+#### 🧪 Ejemplo
+
+```sql
+DELIMITER //
+
+CREATE PROCEDURE contar_hasta(d INT)
+BEGIN
+   DECLARE i INT DEFAULT 1;
+   WHILE i <= d DO
+      SELECT i;
+      SET i = i + 1;
+   END WHILE;
+END //
+
+DELIMITER ;
+
+CALL contar_hasta(5);
+```
+
+---
+
+### 🧠 Ejercicios propuestos – WHILE
+
+1. Crea un procedimiento `cuenta_regresiva` que reciba un número y cuente hacia atrás hasta 1.
+2. Crea un procedimiento `pares_hasta` que reciba un número y muestre solo los números pares hasta ese número.
+
+---
+
+### 🔁 LOOP – Bucle genérico
+
+Permite crear bucles que deben cerrarse manualmente con `LEAVE`.
+
+#### 🧱 Sintaxis
+
+```sql
+[etiqueta:] LOOP
+   -- código
+   LEAVE etiqueta; -- para salir del bucle
+END LOOP;
+```
+
+#### 🧪 Ejemplo
+
+```sql
+DELIMITER //
+
+CREATE PROCEDURE ejemplo_loop()
+BEGIN
+   DECLARE contador INT DEFAULT 1;
+
+   bucle: LOOP
+      SELECT contador;
+      SET contador = contador + 1;
+
+      IF contador > 3 THEN
+         LEAVE bucle;
+      END IF;
+   END LOOP;
+END //
+
+DELIMITER ;
+
+CALL ejemplo_loop();
+```
+
+---
+
+### 🧠 Ejercicios propuestos – LOOP
+
+1. Crea un procedimiento `saludar_3_veces` que muestre "Hola" tres veces usando un `LOOP`.
+2. Crea un procedimiento `tabla_del_3` que muestre la tabla del 3 hasta 30.
+
+---
+
+### 🔁 REPEAT – Ejecuta al menos una vez y repite mientras se cumpla una condición
+
+#### 🧱 Sintaxis
+
+```sql
+REPEAT
+   -- código
+UNTIL condición
+END REPEAT;
+```
+
+#### 🧪 Ejemplo
+
+```sql
+DELIMITER //
+
+CREATE PROCEDURE ejemplo_repeat()
+BEGIN
+   DECLARE i INT DEFAULT 1;
+
+   REPEAT
+      SELECT i;
+      SET i = i + 1;
+   UNTIL i > 3
+   END REPEAT;
+END //
+
+DELIMITER ;
+
+CALL ejemplo_repeat();
+```
+
+---
+
+### 🧠 Ejercicios propuestos – REPEAT
+
+1. Crea un procedimiento `mostrar_impares` que muestre los números impares del 1 al 9.
+2. Crea un procedimiento `contar_hasta_n` que reciba un número y use `REPEAT` para contar hasta él.
+
+---
+
+## 📌 Nota
+
+Estas estructuras deben ir siempre dentro de bloques `BEGIN...END`, normalmente dentro de un procedimiento.
+
+Recuerda: ¡es mejor practicar! Prueba cada estructura y modifica los ejemplos para entender cómo funcionan.
+
+
