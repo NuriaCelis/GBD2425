@@ -82,7 +82,7 @@ DELIMITER ;
 
 CALL ejemplo_variables();
 ```
-```
+
 
 
 ## ✅ 3. Procedimientos almacenados (Stored Procedures)
