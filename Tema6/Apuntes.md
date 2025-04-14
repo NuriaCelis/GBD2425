@@ -1,10 +1,7 @@
 # UNIDAD 6. PROGRAMACIÓN DE BASES DE DATOS
 
-¡Perfecto! Aquí tienes las primeras secciones de los apuntes en formato **Markdown**, listas para usar en un editor como VS Code, Obsidian, HackMD o incluso para convertirlas fácilmente a HTML o PDF:
 
----
 
-```markdown
 # Programación en Bases de Datos (Nivel Básico)
 
 ## ✅ 1. Introducción a la programación en bases de datos
