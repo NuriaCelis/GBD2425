@@ -34,10 +34,10 @@ IES Miguel Herrero.
 
   [Apuntes de la Unidad 6.](Tema6/Apuntes.md)
 
-<!--💥 **7. UNIDAD 7. GESTIÓN DE LA SEGURIDAD DE LOS DATOS.**
+💥 **7. UNIDAD 7. GESTIÓN DE LA SEGURIDAD DE LOS DATOS.**
 
   [Apuntes de la Unidad 7.](Tema7/Apuntes.md)
 
 📻 **8. UNIDAD 8. PROYECTO GRUPAL.**
 
-  [Apuntes de la Unidad 8.](Tema8/Apuntes.md) -->
+  [Apuntes de la Unidad 8.](Tema8/Apuntes.md)
