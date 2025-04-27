@@ -30,7 +30,7 @@ IES Miguel Herrero.
   
   [Apuntes de la Unidad 5.](Tema5/Apuntes.md)
 
-📻 **6. UNIDAD 6. PROGRAMACIÓN DE BASES DE DATOS.**
+📻 **6. UNIDAD 6. GESTION DE LA SEGURIDAD DE LOS DATOS.**
 
   [Apuntes de la Unidad 6.](Tema6/Apuntes.md)
 
