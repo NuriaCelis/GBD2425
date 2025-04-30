@@ -331,81 +331,10 @@ SELECT total_votos FROM canciones WHERE numCancion=1;
 2. Crea un procedimiento llamado `cuadrado_numero` que reciba un número y muestre su cuadrado.
 3. Crea un procedimiento llamado `info_usuario` que reciba un nombre y un apellido y muestre un mensaje de bienvenida personalizado.
 4. Crea un procedimiento llamado `mostrar_canciones` que muestre todas las canciones de un grupo a partir de su nombre.
-
-
-```sql
-CREATE PROCEDURE MostrarCancionesPorGrupo (
-    IN p_nombre_grupo VARCHAR(100)
-)
-BEGIN
-    SELECT c.titulo, c.duracion
-    FROM canciones c
-    INNER JOIN grupos g ON c.id_grupo = g.id_grupo
-    WHERE g.nombre = p_nombre_grupo;
-END;
-```
-
----
-
 5. Insertar una nueva canción en un grupo dado.
-
-```sql
-CREATE PROCEDURE InsertarCancion (
-    IN p_titulo VARCHAR(100),
-    IN p_duracion INT,
-    IN p_id_grupo INT
-)
-BEGIN
-    INSERT INTO canciones (titulo, duracion, id_grupo)
-    VALUES (p_titulo, p_duracion, p_id_grupo);
-END;
-```
-
 6. Aumentar en X segundos la duración de una canción y devolver su nueva duración.
-
-```sql
-CREATE PROCEDURE AumentarDuracionCancion (
-    IN p_id_cancion INT,
-    INOUT p_incremento INT
-)
-BEGIN
-    UPDATE canciones
-    SET duracion = duracion + p_incremento
-    WHERE id_cancion = p_id_cancion;
-
-    SELECT duracion INTO p_incremento
-    FROM canciones
-    WHERE id_cancion = p_id_cancion;
-END;
-```
-
 7. Borrar todas las canciones de un grupo dado por su ID.
-
-```sql
-CREATE PROCEDURE BorrarCancionesDeGrupo (
-    IN p_id_grupo INT
-)
-BEGIN
-    DELETE FROM canciones
-    WHERE id_grupo = p_id_grupo;
-END;
-```
-
 8. Contar cuántos componentes tiene un grupo.
-
-```sql
-CREATE PROCEDURE ContarComponentes (
-    IN p_id_grupo INT,
-    OUT p_total INT
-)
-BEGIN
-    SELECT COUNT(*) INTO p_total
-    FROM componentes
-    WHERE id_grupo = p_id_grupo;
-END;
-```
-
-
 
 > 💡 Consejo: prueba cada procedimiento y modifica valores para ver cómo se comporta.
 
