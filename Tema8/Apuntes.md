@@ -331,10 +331,10 @@ SELECT total_votos FROM canciones WHERE numCancion=1;
 2. Crea un procedimiento llamado `cuadrado_numero` que reciba un número y muestre su cuadrado.
 3. Crea un procedimiento llamado `info_usuario` que reciba un nombre y un apellido y muestre un mensaje de bienvenida personalizado.
 4. Crea un procedimiento llamado `mostrar_canciones` que muestre todas las canciones de un grupo a partir de su nombre.
-5. Insertar una nueva canción en un grupo dado.
-6. Aumentar en X segundos la duración de una canción y devolver su nueva duración.
-7. Borrar todas las canciones de un grupo dado por su ID.
-8. Contar cuántos componentes tiene un grupo.
+5. Crea un procedimiento llamado `insertar_voto' que recibe como parámetro el título de la canción y el nombre y apellido de la persona que vota. Se entiende que el voto se hace en el día de hoy.
+6. Crea un procedimiento llamado `Aumentar_segundos` que aumenta en X segundos la duración de una canción y devolve su nueva duración.
+7. Crea un procedimiento llamado `Borrar_canciones` que elimina todas las canciones de un grupo dado por su ID.
+8. Crea un procedimiento llamado `Contar` cuántos componentes tiene un grupo. El parámetro que pasamos al procedimiento es el nombre del grupo.
 
 > 💡 Consejo: prueba cada procedimiento y modifica valores para ver cómo se comporta.
 
