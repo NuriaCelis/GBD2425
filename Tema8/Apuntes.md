@@ -175,6 +175,8 @@ CALL nombre_procedimiento();
 
 ### 🧪 Ejemplo 1: Procedimiento sin parámetros
 
+Este ejemplo le hacemos directamente desde una ventana de trabajo normal, para comprender el uso de los **DELIMITER**.
+
 ```sql
 DELIMITER //
 
@@ -190,7 +192,11 @@ CALL saludar();
 
 ---
 
+Un **parámetro de un procedimiento almacenado** es una variable que se utiliza para **pasar datos al procedimiento** (entrada), **recibir datos desde el procedimiento** (salida), o **ambas cosas** (entrada/salida), permitiendo que el procedimiento sea reutilizable y adaptable a diferentes situaciones.
+
 ### 🧪 Ejemplo 2: Procedimiento con parámetro de entrada
+
+Este ejemplo le hacemos desde crear un nuevo procedimiento almacenado.
 
 ```sql
 DELIMITER //
@@ -203,17 +209,117 @@ END //
 DELIMITER ;
 
 CALL saludar_persona('María');
+CALL saludar_persona('David');
 ```
 
 ---
 
 ### 🔄 Parámetros en procedimientos
 
-- `IN`: parámetro de **entrada** (el más común).
-- `OUT`: parámetro de **salida** (devuelve un valor).
-- `INOUT`: entrada y salida.
+Un **parámetro de un procedimiento almacenado** es una variable especial que se declara en la cabecera del procedimiento y que permite **intercambiar información entre el procedimiento y el entorno que lo invoca**. Los parámetros hacen que el procedimiento sea **más flexible y reutilizable**, ya que permiten adaptar su comportamiento según los valores que reciba o devuelva.
+
+Existen tres tipos de parámetros:
+
+- **IN (entrada):** se usan para enviar valores al procedimiento desde el exterior. Son de solo lectura dentro del procedimiento.
+- **OUT (salida):** permiten devolver un valor desde el procedimiento hacia el entorno que lo llamó.
+- **INOUT (entrada/salida):** sirven tanto para recibir un valor al inicio como para devolver un valor modificado al final.
+
+Estos parámetros son útiles cuando queremos encapsular lógica en procedimientos que puedan trabajar con distintos datos sin reescribir el código.
+
+Vamos a ver tres ejemplos distintos del uso de los parámetros.
+
+
+
+### ✅ 1. Procedimiento con **parámetro de entrada**
+
+**Ejemplo:** Obtener el nombre de un grupo a partir de su ID.  
+**Base de datos:** `concursoMusica`. Tenemos que tener seleccionada la base de datos indicada.
+
+```sql
+DELIMITER //
+
+CREATE PROCEDURE ObtenerNombreGrupo (IN p_id_grupo INT)
+BEGIN
+    SELECT nombre
+    FROM grupos
+    WHERE codgrupo = p_id_grupo;
+END //
+
+DELIMITER ;
+```
+
+**Uso:**
+
+```sql
+CALL ObtenerNombreGrupo(2);
+```
 
 ---
+
+### ✅ 2. Procedimiento con **parámetro de salida**
+
+**Ejemplo:** Devolver cuántas canciones tiene un grupo.  
+**Base de datos:** `concursoMusica`
+
+```sql
+DELIMITER //
+
+CREATE PROCEDURE ContarCancionesGrupo (IN p_id_grupo INT,OUT p_total INT)
+BEGIN
+    SELECT COUNT(*) INTO p_total
+    FROM canciones
+    WHERE grupo = p_id_grupo;
+END //
+
+DELIMITER ;
+```
+
+**Uso:**
+
+```sql
+CALL ContarCancionesGrupo(1, @total);
+SELECT @total;
+```
+Para poder darle valor a un parámetro de tipo OUT o de salida, se utiliza la instrucción **INTO** dentro de una **SELECT**. En el ejemplo, guarda el total de las canciones dentro de la variable p_total.
+
+🔹 ¿Qué es **@total**?
+
+@total es una variable definida por el usuario que existe en la sesión actual de MySQL. Se utiliza para interactuar con parámetros de salida o entrada/salida de procedimientos almacenados, ya que estos parámetros no pueden ser directamente mostrados como resultados por el CALL, sino que deben guardarse en una variable externa para consultarlos después.
+
+---
+
+### ✅ 3. Procedimiento con **parámetro de entrada/salida**
+
+**Ejemplo:** Aumentar el número de votos de una cancion concreta y devolver el nuevo valor. (Se trata de modificar el campo total_votos de la tabla canciones).
+**Base de datos:** `concursoMusica`  
+
+```sql
+DELIMITER //
+
+CREATE PROCEDURE AumentarVotos (IN p_numCancion INT, INOUT p_nuevo_total INT)
+BEGIN
+    UPDATE canciones
+    SET total_votos = total_votos + p_nuevo_total
+    WHERE numCancion = p_numCancion;
+
+    SELECT total_votos INTO p_nuevo_total
+    FROM canciones
+    WHERE numCancion = p_numCancion;
+END //
+
+DELIMITER ;
+```
+
+**Uso:**
+
+```sql
+SELECT total_votos FROM canciones WHERE numCancion=1;
+SET @incremento = 2;
+CALL AumentarVotos(1, @incremento);
+SELECT @incremento; -- tiene que dar lo mismo que la consulta
+SELECT total_votos FROM canciones WHERE numCancion=1;
+```
+
 
 ### 🧠 Ejercicios propuestos
 
