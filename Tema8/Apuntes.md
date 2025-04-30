@@ -20,7 +20,41 @@ En una base de datos, además de almacenar datos, también podemos **programar l
 - **Triggers (disparadores):** código que se ejecuta automáticamente al producirse un evento (INSERT, UPDATE, DELETE).
 - **Cursores y control de flujo:** para manejar filas una a una y aplicar lógica condicional o bucles.
 
+
+
+## ✅ 2. Crear un Procedimiento Almacenado en MySQL Workbench
+
+### ¿Qué es un procedimiento almacenado?
+Un **procedimiento almacenado** es un bloque de código SQL que se guarda en la base de datos y se puede ejecutar cuando sea necesario. Puede aceptar parámetros de entrada y salida, y permite automatizar tareas repetitivas.
+
+
+## 🧪 Crear el procedimiento desde MySQL Workbench
+
+1. Abre MySQL Workbench y conéctate a tu base de datos.
+2. En el panel izquierdo, busca tu base de datos y expande el nodo **Stored Procedures**.
+3. Haz clic derecho y selecciona **"Create Stored Procedure..."**.
+4. Se abrirá una pestaña con una plantilla como esta:
+
+```sql
+CREATE PROCEDURE `nombre`()
+BEGIN
+   -- tu código aquí
+END
+```
+
+5. Escribe tu código, haz clic en **Apply**, revisa y luego en **Finish**.
+
 ---
+
+## 📝 Notas importantes
+
+- **Siempre cambia el delimitador** si usas `BEGIN...END` para evitar errores de ejecución.
+- Si el procedimiento ya existe y quieres cambiarlo, primero debes borrarlo con:
+  ```sql
+  DROP PROCEDURE IF EXISTS nombre_procedimiento;
+  ```
+
+
 
 ## ✅ 2. Variables
 
