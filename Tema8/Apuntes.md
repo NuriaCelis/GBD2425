@@ -36,7 +36,7 @@ Un **procedimiento almacenado** es un bloque de código SQL que se guarda en la 
 4. Se abrirá una pestaña con una plantilla como esta:
 
 ```sql
-CREATE PROCEDURE `nombre`()
+CREATE PROCEDURE `ejemplo1`()
 BEGIN
    -- tu código aquí
 END
@@ -53,10 +53,12 @@ END
   ```sql
   DROP PROCEDURE IF EXISTS nombre_procedimiento;
   ```
+- Todos los procedimientos tienen un nombre seguido de paréntesis.
+- El código que queremos ejecutar se escribe entre **BEGIN** y **END**.
 
 
 
-## ✅ 2. Variables
+## ✅ 3. Variables
 
 Una **variable** es un espacio en memoria que se utiliza para **guardar temporalmente un valor** durante la ejecución de un bloque de código.
 
@@ -74,7 +76,7 @@ DECLARE nombre_variable TIPO;
 ```
 
 #### 📌 Ejemplos:
-
+Vamos a utilizar el ejemplo1() creado en el apartado anterior para ir haciendo pruebas.
 ```sql
 DECLARE contador INT;
 DECLARE nombre_cliente VARCHAR(50);
@@ -95,9 +97,25 @@ También se pueden usar en operaciones:
 SET contador = contador + 1;
 ```
 
+Para mostrar los datos, utilizamos la sentencia SELECT.
+
+```sql
+SELECT contador, nombre_cliente, fecha_actual;
+```
+Guardamos los cambios con el botón **Apply**, revisa y luego en **Finish**.
+
+Una vez guardado el Procedimiento, aparece almacenado como un objeto de la base de datos, en la categoría **Stored Procedures**. Si ahora quisieramos ejecutar este procedimiento, escribimos en una hoja en blanco la siguiente instrucción:
+
+```sql
+CALL ejemplo1();
+```
+
+
 ---
 
 ## 🧪 Ejemplo completo
+
+Realizamos ahora un ejemplo completo repitiendo los pasos anteriores con el siguiente procedimiento.
 
 ```sql
 DELIMITER //
@@ -119,7 +137,7 @@ CALL ejemplo_variables();
 
 
 
-## ✅ 3. Procedimientos almacenados (Stored Procedures)
+## ✅ 4. Procedimientos almacenados (Stored Procedures)
 
 Un **procedimiento almacenado** es un bloque de código SQL que se guarda en la base de datos y se puede ejecutar cuantas veces queramos. Sirve para automatizar tareas, encapsular lógica y reutilizar código.
 
@@ -207,7 +225,7 @@ CALL saludar_persona('María');
 
 
 
-## ✅ 4. Funciones
+## ✅ 5. Funciones
 
 Una **función** es un bloque de código almacenado en la base de datos que **devuelve un único valor**. A diferencia de los procedimientos, las funciones **pueden utilizarse dentro de una consulta**, como si fueran una función de MySQL (`NOW()`, `CONCAT()`, etc.).
 
