@@ -27,6 +27,10 @@ En una base de datos, además de almacenar datos, también podemos **programar l
 ### ¿Qué es un procedimiento almacenado?
 Un **procedimiento almacenado** es un bloque de código SQL que se guarda en la base de datos y se puede ejecutar cuando sea necesario. Puede aceptar parámetros de entrada y salida, y permite automatizar tareas repetitivas.
 
+Un procedimiento almacenado siempre está incluido como un objeto más dentro de una base de datos, como si fuera una tabla o una vista.
+
+Para realizar los ejemplos del tema que no están asociados a ninguna base de datos concreta, vamos a crear una base de datos denominada Tema8Ejemplos. Aquí crearemos los ejercicios del tema que NO están asociados a ninguna tabla de ninguna base de datos.
+
 
 ## 🧪 Crear el procedimiento desde MySQL Workbench
 
@@ -334,7 +338,8 @@ SELECT total_votos FROM canciones WHERE numCancion=1;
 5. Crea un procedimiento llamado `insertar_voto' que recibe como parámetro el título de la canción y el nombre y apellido de la persona que vota. Se entiende que el voto se hace en el día de hoy.
 6. Crea un procedimiento llamado `Aumentar_segundos` que aumenta en X segundos la duración de una canción y devolve su nueva duración.
 7. Crea un procedimiento llamado `Borrar_canciones` que elimina todas las canciones de un grupo dado por su ID.
-8. Crea un procedimiento llamado `Contar` cuántos componentes tiene un grupo. El parámetro que pasamos al procedimiento es el nombre del grupo.
+8. Crea un procedimiento llamado `Contar` que devuelva cuántos componentes tiene un grupo. El parámetro que pasamos al procedimiento es el nombre del grupo.
+9. Crea un procedimiento llamado `grupos` que crea una tabla con dos campos, nombre, que guardará el nombre de los grupos, y canciones, que será un campo que guarda cuantas canciones tiene cada grupo. Una vez creada la tabla, hay que rellenarla con los datos correspondientes.
 
 > 💡 Consejo: prueba cada procedimiento y modifica valores para ver cómo se comporta.
 
