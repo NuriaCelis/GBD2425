@@ -419,11 +419,11 @@ SELECT es_mayor_edad(20); -- Resultado: 'Mayor de edad'
 1. Crea una función llamada `saludo_personal` que reciba un nombre y devuelva un saludo tipo "Hola, Juan".
 2. Crea una función llamada `area_circulo` que reciba el radio de un círculo y devuelva su área (`π * r²`). Usa `PI()` y `POW()` de MySQL.
 3. Crea una función llamada `iva_incluido` que reciba un precio y devuelva el precio con un 21% de IVA.
-4. Crear una función llamada `totalCanciones` que, dado el ID de un grupo, devuelva el número total de canciones registradas de ese grupo. (Base de datos ConcursoMusica)
-5. Crear una función llamada `nombreGrupo` que, dado el ID de un componente, devuelva el nombre del grupo al que pertenece.
-6. Crear una función llamada `duracionMedia` que reciba el nombre de un grupo y devuelva la duración media de sus canciones.
-7. Crear una función llamada `votado` que, dado el ID de un usuario, devuelva `TRUE` si ha votado al menos una canción y `FALSE` en caso contrario.
-8. Crear una función llamda `componentes` que reciba el ID de un grupo y devuelva cuántos componentes forman parte de él.
+4. Crear una función llamada `total_canciones` que, dado el ID de un grupo, devuelva el número total de canciones registradas de ese grupo. (Base de datos ConcursoMusica)
+5. Crear una función llamada `nombre_grupo` que, dado el ID de un componente, devuelva el nombre del grupo al que pertenece.
+6. Crear una función llamada `duracion_media` que reciba el nombre de un grupo y devuelva la duración media de sus canciones.
+7. Crear una función llamada `votado` que, dado el ID de un usuario, devuelva cuantas canciones ha votado.
+8. Crear una función llamada `componentes` que reciba el nombre de un grupo y devuelva cuántos componentes forman parte de él.
 
 
 > 💡 Prueba las funciones usando `SELECT` directamente.
