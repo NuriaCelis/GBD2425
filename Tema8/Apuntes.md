@@ -758,4 +758,3 @@ Estas estructuras deben ir siempre dentro de bloques `BEGIN...END`, normalmente 
 
 Recuerda: ¡es mejor practicar! Prueba cada estructura y modifica los ejemplos para entender cómo funcionan.
 
-
