@@ -602,8 +602,8 @@ CALL evaluar_nota(6);
 
 ### 🧠 Ejercicios propuestos – IF
 
-1. Crea un procedimiento `evaluar_edad` que reciba una edad y muestre "Mayor de edad" solo si es mayor o igual a 18.
-2. Crea un procedimiento `es_par` que reciba un número y muestre "Es par" si lo es.
+1. Crea un procedimiento `evaluar_edad` que reciba una edad y muestre "Mayor de edad" solo si es mayor o igual a 18, y que muestre "No es mayor de edad" si no lo es.
+2. Crea una función `es_par` que reciba un número y devuelva TRUE si es par, y FALSE si no lo es.
 
 ---
 
@@ -646,7 +646,7 @@ CALL calificar_nota(6);
 ### 🧠 Ejercicios propuestos – CASE
 
 1. Crea un procedimiento `evaluar_dia` que reciba un número (1-7) y devuelva el nombre del día de la semana.
-2. Crea un procedimiento `clasificar_temperatura` que reciba una temperatura y devuelva "Frío", "Templado" o "Calor".
+2. Crea una función `clasificar_temperatura` que reciba una temperatura y devuelva "Frío", "Templado" o "Calor". (Si es menos de 5 grados, Frio, si está entre 5 y 15, Templado y a partir de 15, Calor)
 
 ---
 
@@ -680,6 +680,27 @@ DELIMITER ;
 
 CALL contar_hasta(5);
 ```
+En este ejemplo, queda un poco feo que cada vez que escribe un número, nos lo muestra en una pestaña diferente. Vamos a modificar el ejemplo para crear una tabla temporal con un solo campo de tipo entero, y vamos guardando el resultado de como se cuenta en el bucle dentro de la tabla. Al finalizar el procedimiento, hay que borrar la tabla.
+
+```sql
+DELIMITER //
+
+CREATE PROCEDURE `contar_hasta`(d INT)
+BEGIN
+   DECLARE i INT DEFAULT 1;
+   create temporary table tablaContarHasta(num int);
+   WHILE i <= d DO
+      insert into tablaContarHasta values(i);
+      SET i = i + 1;
+   END WHILE;
+select * from tablaContarHasta;
+drop table tablaContarHasta;
+END //
+
+DELIMITER ;
+
+CALL contar_hasta(5);
+```
 
 ---
 
@@ -687,52 +708,6 @@ CALL contar_hasta(5);
 
 1. Crea un procedimiento `cuenta_regresiva` que reciba un número y cuente hacia atrás hasta 1.
 2. Crea un procedimiento `pares_hasta` que reciba un número y muestre solo los números pares hasta ese número.
-
----
-
-### 🔁 LOOP – Bucle genérico
-
-Permite crear bucles que deben cerrarse manualmente con `LEAVE`.
-
-#### 🧱 Sintaxis
-
-```sql
-[etiqueta:] LOOP
-   -- código
-   LEAVE etiqueta; -- para salir del bucle
-END LOOP;
-```
-
-#### 🧪 Ejemplo
-
-```sql
-DELIMITER //
-
-CREATE PROCEDURE ejemplo_loop()
-BEGIN
-   DECLARE contador INT DEFAULT 1;
-
-   bucle: LOOP
-      SELECT contador;
-      SET contador = contador + 1;
-
-      IF contador > 3 THEN
-         LEAVE bucle;
-      END IF;
-   END LOOP;
-END //
-
-DELIMITER ;
-
-CALL ejemplo_loop();
-```
-
----
-
-### 🧠 Ejercicios propuestos – LOOP
-
-1. Crea un procedimiento `saludar_3_veces` que muestre "Hola" tres veces usando un `LOOP`.
-2. Crea un procedimiento `tabla_del_3` que muestre la tabla del 3 hasta 30.
 
 ---
 
