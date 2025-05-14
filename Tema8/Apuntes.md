@@ -747,8 +747,8 @@ CALL ejemplo_repeat();
 
 ### 🧠 Ejercicios propuestos – REPEAT
 
-1. Crea un procedimiento `mostrar_impares` que muestre los números impares del 1 al 9.
-2. Crea un procedimiento `contar_hasta_n` que reciba un número y use `REPEAT` para contar hasta él.
+1. Crea un procedimiento `mostrar_impares` que muestre los números impares del 1 al 9. Para ello se guardan los números en una tabla, se muestran y se borra al final la tabla.
+2. Crea un procedimiento `contar_hasta_n` que reciba un número y use `REPEAT` para contar hasta él.  El resultado lo guardamos en una tabla que creamos dentro del procedimiento y borramos al final.
 
 ---
 
