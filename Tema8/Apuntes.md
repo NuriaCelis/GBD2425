@@ -387,7 +387,9 @@ DELIMITER //
 
 CREATE FUNCTION doble(numero INT) RETURNS INT DETERMINISTIC
 BEGIN
-   RETURN numero * 2;
+   declare resul int;
+   set resul=numero*2;
+   RETURN resul;
 END //
 
 DELIMITER ;
@@ -404,7 +406,13 @@ DELIMITER //
 
 CREATE FUNCTION es_mayor_edad(edad INT) RETURNS VARCHAR(20) DETERMINISTIC
 BEGIN
-   RETURN IF(edad >= 18, 'Mayor de edad', 'Menor de edad');
+   declare resul varchar(30);
+   if edad>=18 then
+     set resul='Mayor de edad';
+   else
+      set resul='Menor de edad';
+   end if;
+   RETURN resul;
 END //
 
 DELIMITER ;
